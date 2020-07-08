@@ -6,5 +6,4 @@ while rez < target:
     rez = basic_rez*1.1
     basic_rez = rez
     day +=1
-    print (f'В день под номером {day} вы пробежите: {rez:.2f}')
 print (f'Вы достигнете результата на {day} день')
