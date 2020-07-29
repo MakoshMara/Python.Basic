@@ -12,7 +12,7 @@ class Cell:
         return Cell(self.unit * other.unit)
 
     def __truediv__(self, other):
-        return Cell(self.unit // other.unit)
+        return Cell(max(self.unit, other.unit) // min(self.unit, other.unit))
 
     def make_order(self, count):
         i = 1
@@ -26,6 +26,10 @@ class Cell:
         return str(self.unit)
 
 
-cell_1 = Cell(50)
-cell_2 = Cell(12)
-print(cell_1.make_order(5))
+cell_1 = Cell(int(input('Введите количество ячеек в первой клетке:')))
+cell_2 = Cell(int(input('Введите количество ячеек во второй клетке:')))
+print(f'Результат сложения клеток: {cell_1 + cell_2}')
+print(f'Результат вычитания клеток: {cell_1 - cell_2}')
+print(f'Результат умножения клеток: {cell_1 * cell_2}')
+print(f'Результат деления клеток: {cell_1 / cell_2}')
+print(f'Красиво оформленные ячейки первой клетки \n{cell_1.make_order(5)}')
